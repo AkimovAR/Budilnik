@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->lcdNumber->setSegmentStyle(QLCDNumber::Filled);
+    //ui->lcdNumber->setSegmentStyle(QLCDNumber::Filled);
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this, SLOT(showTime()));
@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
     m = 0;
     Timer = new QTimer(this);
     connect (Timer, SIGNAL(timeout()), this, SLOT(TimerSlot()));
-    Timer->start(1);
-    ui->pushButton->setText("Стоп");
+    Timer->stop();
+    ui->pushButton->setText("Старт");
     ui->pushButton_2->setText("Сброс");
 }
 
